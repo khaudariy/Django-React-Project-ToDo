@@ -9,11 +9,14 @@ import CreateToDo from './components/CreateToDo';
 function App() {
 
   const [todos , settodos] = useState ([])
-useEffect(()=>{
+useEffect(() => {
   fetch("http://127.0.0.1:8880/todo/")
   .then(response=>response.json())
   .then(data => settodos(data))
 })
+const onUpdateToDo=(updateToDo) =>{
+  settodos(todos.map(todo => (todo.id == updateToDo.id ? updateToDo : todo)))
+}
 
   return (
   <div className='container'>
