@@ -17,12 +17,15 @@ useEffect(() => {
 const onUpdateToDo=(updateToDo) =>{
   settodos(todos.map(todo => (todo.id == updateToDo.id ? updateToDo : todo)))
 }
+const OnCreateToDo = (newToDo) => {
+  settodos([...todos,newToDo])
+}
 
   return (
   <div className='container'>
     <div className='row'>
       <div className='col-lg-8 mx-auto my-5'>
-        <CreateToDo/>
+        <CreateToDo OnCreateToDo={OnCreateToDo} />
         <Todos todos={todos} settodos ={settodos}/>
 
       </div>
