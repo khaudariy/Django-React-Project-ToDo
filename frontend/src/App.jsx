@@ -27,9 +27,11 @@ function App() {
       <div className='col-lg-8 mx-auto my-5'>
         {/* <CreateToDo OnCreateToDo={OnCreateToDo} />
         <Todos todos={todos} settodos ={settodos}/> */}
+        
         <CreateToDo/>
         <Todos/>
-
+        <br></br>
+        <p>Hosam Khaudariy Projects</p>
       </div>
 
     </div>
